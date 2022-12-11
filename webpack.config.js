@@ -1,36 +1,35 @@
-const path = require("path");
-const webpack = require("webpack");
+const prod = process.env.NODE_ENV === "production";
+
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: "./index.js",
-  mode: "development",
+  mode: prod ? "production" : "development",
+  entry: "./src/index.tsx",
+  output: {
+    path: __dirname + "/dist/",
+  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: "babel-loader",
-        options: { presets: ["@babel/env"] },
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        resolve: {
+          extensions: [".ts", ".tsx", ".js", ".json"],
+        },
+        use: "ts-loader",
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
   },
-  resolve: { extensions: ["*", ".js", ".jsx"] },
-  output: {
-    path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/",
-    filename: "bundle.js",
-  },
-  devServer: {
-    static: path.join(__dirname, "public/"),
-    port: 3000,
-    devMiddleware: {
-      publicPath: "http://localhost:3000/dist/",
-    },
-    hot: "only",
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  devtool: prod ? undefined : "source-map",
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "public/index.html",
+    }),
+    new MiniCssExtractPlugin(),
+  ],
 };
