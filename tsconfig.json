@@ -2,7 +2,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "jsx": "react",
-    "module": "esnext", // Webpack handles this. Option keeps code unchanged.
+    "module": "esnext",
     "moduleResolution": "node",
     "lib": ["dom", "esnext"],
     "strict": true,
