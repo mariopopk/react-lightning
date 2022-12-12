@@ -8,7 +8,8 @@
   "description": "An example of what a component library could look like for Entrata. This is not an official Entrata component library",
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "Mario Popoca",

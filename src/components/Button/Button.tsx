@@ -5,7 +5,7 @@ interface ButtonProps {
 }
 
 const Button: React.FunctionComponent<ButtonProps> = ({ children }) => {
-  return <></>;
+  return <button>{children} imported from ENTRATA</button>;
 };
 
 export default Button;
