@@ -4,6 +4,6 @@ export interface ButtonProps {
   children?: ReactNode;
 }
 
-export const Button = ({ children }: ButtonProps) => {
+export function Button({ children }: ButtonProps) {
   return <button>{children}</button>;
-};
+}
