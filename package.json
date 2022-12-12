@@ -1,15 +1,22 @@
 {
-  "name": "entrata-component-library",
+  "name": "entrata-ux",
   "private": true,
   "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">=18.x"
   },
+  "files": [
+    "dist"
+  ],
   "description": "An example of what a component library could look like for Entrata. This is not an official Entrata component library",
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build": "tsc"
+    "prepublish": "npm run build",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc && cp package.json README.md ./dist"
   },
   "keywords": [],
   "author": "Mario Popoca",
@@ -24,11 +31,12 @@
     "@storybook/react": "^6.5.14",
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.26",
-    "@types/react-dom": "^18.0.9",
-    "typescript": "^4.9.4"
+    "@types/react-dom": "^18.0.9"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.4"
+
   }
 }

@@ -1,11 +1,9 @@
 import React, { ReactNode } from "react";
 
-interface ButtonProps {
+export interface ButtonProps {
   children?: ReactNode;
 }
 
-const Button: React.FunctionComponent<ButtonProps> = ({ children }) => {
-  return <button>{children} imported from ENTRATA</button>;
+export const Button = ({ children }: ButtonProps) => {
+  return <button>{children}</button>;
 };
-
-export default Button;
