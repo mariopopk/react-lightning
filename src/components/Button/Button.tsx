@@ -1,10 +1,15 @@
 import React, { ReactNode } from "react";
-import "./Button.css";
+import styles from "./button.css";
+import cx from "classnames";
 
 export interface ButtonProps {
   children?: ReactNode;
 }
 
 export function Button({ children }: ButtonProps) {
-  return <button className="button">{children}</button>;
+  return (
+    <button className={cx(styles.button, styles.buttonPrimary)}>
+      {children}
+    </button>
+  );
 }

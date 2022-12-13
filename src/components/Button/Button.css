@@ -1,3 +1,15 @@
 .button {
-  color: red;
+  border: 1px solid #fff;
+  background-color: transparent;
+  font-family: Brown Bold, sans-serif;
+  font-size: 1.13em;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 55px;
+  text-decoration: none;
+}
+
+.buttonPrimary {
+  background-color: red;
 }
