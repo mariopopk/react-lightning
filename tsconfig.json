@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "allowJs": true,
     "declaration": true,
     "declarationDir": "types",
     "esModuleInterop": true,
@@ -15,7 +16,7 @@
     "outDir": "dist", // TODO: Sync with Rollup
     "sourceMap": true,
     "strict": true,
-    "target": "es6"
+    "target": "es5"
   },
   "exclude": ["node_modules"],
   "include": ["src/**/*.ts", "src/**/*.tsx"]
