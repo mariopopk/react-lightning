@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import styles from "./button.css";
+import styles from "./Button.css";
 import cx from "classnames";
 
 export interface ButtonProps {
@@ -8,8 +8,6 @@ export interface ButtonProps {
 
 export function Button({ children }: ButtonProps) {
   return (
-    <button className={cx(styles.button, styles.buttonPrimary)}>
-      {children}
-    </button>
+    <button className={cx(styles.btn, styles.btnPrimary)}>{children}</button>
   );
 }
