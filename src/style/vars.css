@@ -1,5 +1,11 @@
+:root {
+  --primary-color: #e50914;
+}
+
 /* Colors */
-@value blue: #0d6efd;
+@value gray: #6d6d6e;
+@value white: #ffffff;
+@value black: #000000;
 
 /* Sizing */
 @value sizing-1: 0.125rem; /* 2px */
@@ -7,13 +13,21 @@
 @value sizing-3: 0.375rem; /* 6px */
 @value sizing-4: 0.500rem; /* 8px */
 @value sizing-5: 0.625rem; /* 10px */
-@value sizing-6: 0.750rem; /* 12px */
+@value sizing-6: 0.75rem; /* 12px */
 @value sizing-7: 0.875rem; /* 14px */
 @value sizing-8: 1rem; /* 16px */
 @value sizing-9: 1.125rem; /* 18px */
 @value sizing-10: 1.25rem; /* 20px */
 
-/* Variables */
-@value primary-color: blue;
-@value btn-border: 2px;
-@value btn-border: 2px;
+/* 
+Variables 
+*/
+
+@value text-color-dark: black;
+@value text-color-light: white;
+
+/* Primary */
+@value primary-color: white;
+
+/* Secondary */
+@value secondary-color: gray;
