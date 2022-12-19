@@ -1,11 +1,8 @@
-:root {
-  --primary-color: #e50914;
-}
-
 /* Colors */
 @value gray: #6d6d6e;
 @value white: #ffffff;
 @value black: #000000;
+@value red: #e50914;
 
 /* Sizing */
 @value sizing-1: 0.125rem; /* 2px */
@@ -23,11 +20,18 @@
 Variables 
 */
 
+/* Roundness */
+@value roundness: 0rem;
+
+/* Text */
 @value text-color-dark: black;
 @value text-color-light: white;
 
 /* Primary */
-@value primary-color: white;
+@value primary-color: red;
 
 /* Secondary */
 @value secondary-color: gray;
+
+/* Light */
+@value light-color: white;
