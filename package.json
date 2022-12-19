@@ -18,10 +18,7 @@
     "clean": "rm -rf dist",
     "build": "npm run clean && tsc && cp package.json README.md ./dist",
     "dev:build": "npm run clean && tsc --watch && cp package.json README.md ./dist",
-    "rollup": "rollup -c",
-    "dev": "npm run dev:link && npm run dev:rollup",
-    "dev:rollup": "rollup -c -w",
-    "dev:link": "npm link react && npm link react-dom"
+    "dev": "rollup -wc"
   },
   "keywords": [],
   "author": "Mario Popoca",
