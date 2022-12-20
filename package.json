@@ -11,14 +11,15 @@
   "files": [
     "dist"
   ],
-  "description": "A pokemon-themed component library, completely custom-made",
+  "description": "",
   "scripts": {
     "test": "jest",
     "webpack": "webpack",
     "clean": "rm -rf dist",
-    "build": "npm run clean && tsc && cp package.json README.md ./dist",
-    "dev:build": "npm run clean && tsc --watch && cp package.json README.md ./dist",
-    "dev": "rollup -wc"
+    "build": "tsc && cp package.json README.md ./dist",
+    "rollup": "rollup -c",
+    "dev": "npm run build && rollup -wc"
+
   },
   "keywords": [],
   "author": "Mario Popoca",
