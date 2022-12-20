@@ -1,16 +1,15 @@
 import React, { ReactNode, useRef } from "react";
 import styles from "./Button.css";
-import cx from "classnames";
-import { Variant, Size, Color } from "../../theme/variables";
+// import cx from "classnames";
 
 export interface ButtonProps {
   children?: ReactNode;
-  variant?: Variant;
-  size?: Size;
-  color?: Color;
+  variant?: any;
+  size?: any;
+  color?: any;
 }
 
-export function Button({
+export default function Button({
   children,
   variant = "filled",
   size = "md",
@@ -18,14 +17,16 @@ export function Button({
   ...rest
 }: ButtonProps) {
   const ref = useRef<HTMLButtonElement>(null);
-  const classes = cx(styles.btn, {
-    [styles[variant]]: variant,
-    [styles[color]]: color,
-    [styles[size]]: size,
-  });
+  // const classes = cx(styles.btn, {
+  //   [styles[variant]]: variant,
+  //   [styles[color]]: color,
+  //   [styles[size]]: size,
+  // });
+
+  console.log(styles);
 
   return (
-    <button {...rest} className={classes} ref={ref}>
+    <button {...rest} ref={ref}>
       {children}
     </button>
   );
