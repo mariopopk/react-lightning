@@ -8,7 +8,7 @@ import postcssModulesValues from "postcss-modules-values";
 export default [
   {
     input: "src/index.ts",
-    external: ["react"],
+    external: ["react-dom"],
     output: [
       {
         file: "dist/cjs/index.js", //should be same as packageJson.main
@@ -36,6 +36,5 @@ export default [
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
     external: [/\.css$/],
-    watch: true,
   },
 ];
