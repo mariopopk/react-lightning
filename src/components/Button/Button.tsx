@@ -1,6 +1,6 @@
 import React, { ReactNode, useRef } from "react";
 import styles from "./Button.css";
-// import cx from "classnames";
+import cx from "classnames";
 
 export interface ButtonProps {
   children?: ReactNode;
@@ -17,16 +17,17 @@ export default function Button({
   ...rest
 }: ButtonProps) {
   const ref = useRef<HTMLButtonElement>(null);
-  // const classes = cx(styles.btn, {
-  //   [styles[variant]]: variant,
-  //   [styles[color]]: color,
-  //   [styles[size]]: size,
-  // });
+
+  const classes = cx(styles.btn, {
+    [styles[variant]]: variant,
+    [styles[color]]: color,
+    [styles[size]]: size,
+  });
 
   console.log(styles);
 
   return (
-    <button {...rest} ref={ref}>
+    <button {...rest} ref={ref} className={classes}>
       {children}
     </button>
   );

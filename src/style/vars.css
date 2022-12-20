@@ -1,0 +1,37 @@
+/* Colors */
+@value gray: #6d6d6e;
+@value white: #ffffff;
+@value black: #000000;
+@value red: #e50914;
+
+/* Sizing */
+@value sizing-1: 0.125rem; /* 2px */
+@value sizing-2: 0.25rem; /* 4px */
+@value sizing-3: 0.375rem; /* 6px */
+@value sizing-4: 0.500rem; /* 8px */
+@value sizing-5: 0.625rem; /* 10px */
+@value sizing-6: 0.75rem; /* 12px */
+@value sizing-7: 0.875rem; /* 14px */
+@value sizing-8: 1rem; /* 16px */
+@value sizing-9: 1.125rem; /* 18px */
+@value sizing-10: 1.25rem; /* 20px */
+
+/* 
+Variables 
+*/
+
+/* Roundness */
+@value roundness: 0rem;
+
+/* Text */
+@value text-color-dark: black;
+@value text-color-light: white;
+
+/* Primary */
+@value primary-color: red;
+
+/* Secondary */
+@value secondary-color: gray;
+
+/* Light */
+@value light-color: white;

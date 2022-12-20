@@ -3,6 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
+import postcssModulesValues from "postcss-modules-values";
 
 export default [
   {
@@ -25,9 +26,8 @@ export default [
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss({
-        plugins: [],
+        plugins: [postcssModulesValues],
         sourceMap: true,
-        extract: true,
         minimize: true,
         modules: true,
       }),
