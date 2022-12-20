@@ -7,7 +7,7 @@ import postcss from "rollup-plugin-postcss";
 export default [
   {
     input: "src/index.ts",
-
+    external: ["react"],
     output: [
       {
         file: "dist/cjs/index.js", //should be same as packageJson.main
