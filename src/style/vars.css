@@ -23,6 +23,14 @@
 Variables 
 */
 
+/* Breakpoints */
+@value breakpoint-xs: 0px;
+@value breakpoint-sm: 576px;
+@value breakpoint-md: 768px;
+@value breakpoint-lg: 992px;
+@value breakpoint-xl: 1200px;
+@value breakpoint-xxl: 1400px;
+
 /* Roundness */
 @value roundness: 0rem;
 

@@ -1,0 +1,83 @@
+@value vars:  "../../style/vars.css";
+@value breakpoint-xs, breakpoint-sm, breakpoint-md, breakpoint-lg, breakpoint-xl, breakpoint-xxl from vars;
+
+.xs,
+.sm,
+.md,
+.lg,
+.xl,
+.xxl {
+  padding: 0 1.5rem;
+}
+
+@media only screen and (min-width: breakpoint-xs) {
+  .sm,
+  .md,
+  .lg,
+  .xl,
+  .xxl {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: breakpoint-sm) {
+  .sm {
+    max-width: 540px;
+  }
+
+  .md,
+  .lg,
+  .xl,
+  .xxl {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: breakpoint-md) {
+  .sm,
+  .md {
+    max-width: 720px;
+  }
+
+  .lg,
+  .xl,
+  .xxl {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: breakpoint-lg) {
+  .sm,
+  .md,
+  .lg {
+    max-width: 960px;
+  }
+
+  .xl,
+  .xxl {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: breakpoint-xl) {
+  .sm,
+  .md,
+  .lg,
+  .xl {
+    max-width: 1140px;
+  }
+
+  .xxl {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: breakpoint-xxl) {
+  .sm,
+  .md,
+  .lg,
+  .xl,
+  .xxl {
+    max-width: 1320px;
+  }
+}
