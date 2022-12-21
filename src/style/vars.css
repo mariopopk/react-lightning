@@ -1,8 +1,11 @@
 /* Colors */
 @value gray: #6d6d6e;
 @value white: #ffffff;
-@value black: #000000;
 @value red: #e50914;
+
+/* Black */
+@value black: #000000;
+@value black-75: #000000BF;
 
 /* Sizing */
 @value sizing-1: 0.125rem; /* 2px */
@@ -23,6 +26,9 @@ Variables
 /* Roundness */
 @value roundness: 0rem;
 
+/* Background */
+@value background-dark: black-75;
+
 /* Text */
 @value text-color-dark: black;
 @value text-color-light: white;
@@ -35,3 +41,6 @@ Variables
 
 /* Light */
 @value light-color: white;
+
+/* Dark */
+@value dark-color: black;

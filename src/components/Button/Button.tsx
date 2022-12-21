@@ -1,33 +1,39 @@
 import React, { ReactNode, useRef } from "react";
+import { useButton, AriaButtonProps, PressHookProps } from "react-aria";
 import styles from "./Button.css";
 import cx from "classnames";
+import { Color, Size, Variant } from "../../theme/variables";
 
-export interface ButtonProps {
+export interface BaseButtonProps {
+  variant?: Variant;
+  size?: Size;
+  bgColor?: Color;
+}
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    PressHookProps,
+    BaseButtonProps {
   children?: ReactNode;
-  variant?: any;
-  size?: any;
-  color?: any;
 }
 
 export default function Button({
   children,
   variant = "filled",
   size = "md",
-  color = "primary",
+  bgColor = "transparent",
   ...rest
 }: ButtonProps) {
   const ref = useRef<HTMLButtonElement>(null);
+  let { buttonProps } = useButton(rest as AriaButtonProps, ref);
 
   const classes = cx(styles.btn, {
     [styles[variant]]: variant,
-    [styles[color]]: color,
+    [styles[bgColor]]: bgColor,
     [styles[size]]: size,
   });
 
-  console.log(styles);
-
   return (
-    <button {...rest} ref={ref} className={classes}>
+    <button {...buttonProps} ref={ref} className={classes}>
       {children}
     </button>
   );

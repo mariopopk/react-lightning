@@ -1,5 +1,5 @@
 @value vars:  "../../style/vars.css";
-@value primary-color, secondary-color, light-color, text-color-dark, text-color-light, sizing-1, sizing-2, sizing-3, sizing-6, roundness from vars;
+@value primary-color, secondary-color, light-color, dark-color, text-color-dark, text-color-light, sizing-1, sizing-2, sizing-3, sizing-6, roundness from vars;
 
 @value button-border-width: 1px;
 
@@ -26,7 +26,7 @@
 }
 
 .btn:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .btn.sm {
@@ -65,6 +65,12 @@
   color: text-color-dark;
 }
 
+.btn.dark.filled,
+.btn.dark.outline:hover {
+  background-color: dark-color;
+  color: text-color-light;
+}
+
 .btn.primary.outline {
   border-color: primary-color;
   color: primary-color;
@@ -78,4 +84,9 @@
 .btn.light.outline {
   border-color: light-color;
   color: light-color;
+}
+
+.btn.dark.outline {
+  border-color: dark-color;
+  color: dark-color;
 }
