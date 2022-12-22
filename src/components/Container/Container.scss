@@ -1,5 +1,4 @@
-@value vars:  "../../style/vars.css";
-@value breakpoint-xs, breakpoint-sm, breakpoint-md, breakpoint-lg, breakpoint-xl, breakpoint-xxl from vars;
+@import  "../../style/vars.scss";
 
 .xs,
 .sm,
@@ -10,7 +9,7 @@
   padding: 0 1.5rem;
 }
 
-@media only screen and (min-width: breakpoint-xs) {
+@media only screen and (min-width: $breakpoint-xs) {
   .sm,
   .md,
   .lg,
@@ -20,7 +19,7 @@
   }
 }
 
-@media only screen and (min-width: breakpoint-sm) {
+@media only screen and (min-width: $breakpoint-sm) {
   .sm {
     max-width: 540px;
   }
@@ -33,7 +32,7 @@
   }
 }
 
-@media only screen and (min-width: breakpoint-md) {
+@media only screen and (min-width: $breakpoint-md) {
   .sm,
   .md {
     max-width: 720px;
@@ -46,7 +45,7 @@
   }
 }
 
-@media only screen and (min-width: breakpoint-lg) {
+@media only screen and (min-width: $breakpoint-lg) {
   .sm,
   .md,
   .lg {
@@ -59,7 +58,7 @@
   }
 }
 
-@media only screen and (min-width: breakpoint-xl) {
+@media only screen and (min-width: $breakpoint-xl) {
   .sm,
   .md,
   .lg,
@@ -72,7 +71,7 @@
   }
 }
 
-@media only screen and (min-width: breakpoint-xxl) {
+@media only screen and (min-width: $breakpoint-xxl) {
   .sm,
   .md,
   .lg,

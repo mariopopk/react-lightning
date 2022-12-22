@@ -3,7 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
-import postcssModulesValues from "postcss-modules-values";
+import purgecss from "rollup-plugin-purgecss";
 
 export default [
   {
@@ -25,8 +25,12 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
+      purgecss({
+        css: ["**/*.scss"],
+      }),
       postcss({
-        plugins: [postcssModulesValues],
+        // TODO: Remove postCssModulesValues
+        plugins: [],
         sourceMap: true,
         minimize: true,
         modules: true,
@@ -37,6 +41,6 @@ export default [
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
-    external: [/\.css$/],
+    external: [/\.(css|less|scss)$/],
   },
 ];
