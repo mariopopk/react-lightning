@@ -1,5 +1,5 @@
 import React, { ReactNode, useId, useState } from "react";
-import styles from "./FormExpand.scss";
+import styles from "./FormExpand.css";
 import Button from "../Button";
 import { useFocus } from "react-aria";
 import { BaseButtonProps } from "../Button/Button";

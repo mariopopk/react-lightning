@@ -1,6 +1,6 @@
 import React, { ReactNode, useRef } from "react";
 import { useButton, AriaButtonProps, PressHookProps } from "react-aria";
-import styles from "./Button.scss";
+import styles from "./Button.css";
 import cx from "classnames";
 import { Color, Size, Variant } from "../../theme/variables";
 

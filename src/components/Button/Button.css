@@ -1,7 +1,7 @@
-@import  "../../style/vars.scss";
+@value vars:  "../../style/vars.css";
+@value primary-color, secondary-color, light-color, dark-color, text-color-dark, text-color-light, sizing-1, sizing-2, sizing-3, sizing-6, roundness from vars;
 
-
-$button-border-width: 1px;
+@value button-border-width: 1px;
 
 .btn {
   font-weight: 500;
@@ -9,8 +9,8 @@ $button-border-width: 1px;
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
-  border: $button-border-width solid transparent;
-  padding: $sizing-3 $sizing-6;
+  border: button-border-width solid transparent;
+  padding: sizing-3 sizing-6;
   line-height: 1.5;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -32,61 +32,61 @@ $button-border-width: 1px;
 .btn.sm {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
-  border-radius: calc(#{$roundness} - (#{$roundness} * 0.2));
+  border-radius: calc(roundness - (roundness * 0.2));
 }
 
 .btn.md {
-  padding: $sizing-3 $sizing-6;
+  padding: sizing-3 sizing-6;
   font-size: 1rem;
-  border-radius: $roundness;
+  border-radius: roundness;
 }
 
 .btn.lg {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
-  border-radius: calc(#{$roundness} + (#{$roundness} * 0.2));
+  border-radius: calc(roundness + (roundness * 0.2));
 }
 
 .btn.primary.filled,
 .btn.primary.outline:hover {
-  background-color: $primary-color;
-  color: $text-color-dark;
+  background-color: primary-color;
+  color: text-color-dark;
 }
 
 .btn.secondary.filled,
 .btn.secondary.outline:hover {
-  background-color: $secondary-color;
-  color: $text-color-light;
+  background-color: secondary-color;
+  color: text-color-light;
 }
 
 .btn.light.filled,
 .btn.light.outline:hover {
-  background-color: $light-color;
-  color: $text-color-dark;
+  background-color: light-color;
+  color: text-color-dark;
 }
 
 .btn.dark.filled,
 .btn.dark.outline:hover {
-  background-color: $dark-color;
-  color: $text-color-light;
+  background-color: dark-color;
+  color: text-color-light;
 }
 
 .btn.primary.outline {
-  border-color: $primary-color;
-  color: $primary-color;
+  border-color: primary-color;
+  color: primary-color;
 }
 
 .btn.secondary.outline {
-  border-color: $secondary-color;
-  color: $secondary-color;
+  border-color: secondary-color;
+  color: secondary-color;
 }
 
 .btn.light.outline {
-  border-color: $light-color;
-  color: $light-color;
+  border-color: light-color;
+  color: light-color;
 }
 
 .btn.dark.outline {
-  border-color: $dark-color;
-  color: $dark-color;
+  border-color: dark-color;
+  color: dark-color;
 }

@@ -1,6 +1,7 @@
-@import  "../../style/vars.scss";
+@value vars:  "../../style/vars.css";
+@value background-dark, sizing-1, sizing-3, sizing-6 from vars;
 
-$form-border-width: 1px;
+@value form-border-width: 1px;
 
 .formExpandContainer {
   min-width: 100%;
@@ -15,13 +16,13 @@ $form-border-width: 1px;
 }
 
 .form {
-  background: $background-dark;
-  padding: $sizing-3 $sizing-6;
-  border: $form-border-width solid gray;
+  background: background-dark;
+  padding: sizing-3 sizing-6;
+  border: form-border-width solid gray;
   flex-grow: 1;
   line-height: 1.5;
   font-size: 1rem;
-  color: $white;
+  color: white;
   border-left-width: 0;
 }
 
@@ -31,12 +32,12 @@ $form-border-width: 1px;
 }
 
 .label {
-  color: $white;
+  color: white;
   display: flex;
   align-items: center;
   height: 100%;
-  background: $background-dark;
-  border: $form-border-width solid gray;
-  padding: $sizing-3;
+  background: background-dark;
+  border: form-border-width solid gray;
+  padding: sizing-3;
   border-right-width: 0;
 }
