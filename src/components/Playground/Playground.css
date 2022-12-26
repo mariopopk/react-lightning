@@ -1,0 +1,38 @@
+@value vars:  "../../style/vars.css";
+@value sizing-3, sizing-6, dark, text-color-light from vars;
+
+.menuItem {
+  user-select: none;
+  border: 0px solid transparent;
+  padding: sizing-3 sizing-6;
+  line-height: 1.5;
+  cursor: pointer;
+  opacity: 1;
+  position: relative;
+  background: transparent;
+  margin: sizing-3;
+}
+
+.menuItem a,
+.menuItem {
+  text-decoration: none;
+  font-weight: 400;
+  white-space: nowrap;
+  appearance: none;
+  word-break: break-word;
+  color: text-color-light;
+}
+
+.menuItem:hover,
+.menuItem:focus-within {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.menuItem:focus-within {
+  outline: auto auto solid;
+}
+
+.menuItem *:focus {
+  outline-width: 0;
+}

@@ -1,4 +1,10 @@
-import React, { ReactNode, useRef } from "react";
+import React, {
+  ForwardedRef,
+  forwardRef,
+  ReactNode,
+  useRef,
+  RefObject,
+} from "react";
 import { useButton, AriaButtonProps, PressHookProps } from "react-aria";
 import styles from "./Button.css";
 import cx from "classnames";
@@ -16,15 +22,18 @@ export interface ButtonProps
   children?: ReactNode;
 }
 
-export default function Button({
-  children,
-  variant = "filled",
-  size = "md",
-  bgColor = "transparent",
-  ...rest
-}: ButtonProps) {
-  const ref = useRef<HTMLButtonElement>(null);
-  let { buttonProps } = useButton(rest as AriaButtonProps, ref);
+function Button(
+  {
+    children,
+    variant = "filled",
+    size = "md",
+    bgColor = "transparent",
+    ...rest
+  }: ButtonProps,
+  ref: ForwardedRef<HTMLButtonElement>
+) {
+  const domRef = useRef(ref as HTMLButtonElement | null);
+  let { buttonProps } = useButton(rest as AriaButtonProps, domRef);
 
   const classes = cx(styles.btn, {
     [styles[variant]]: variant,
@@ -33,8 +42,10 @@ export default function Button({
   });
 
   return (
-    <button {...buttonProps} ref={ref} className={classes}>
+    <button {...buttonProps} ref={domRef} className={classes}>
       {children}
     </button>
   );
 }
+
+export default forwardRef<HTMLButtonElement, ButtonProps>(Button);

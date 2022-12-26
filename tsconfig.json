@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     // Default
-    "target": "es5",
+    // TODO: Review target, test on browsers
+    "target": "es2015",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,

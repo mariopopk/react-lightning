@@ -1,0 +1,10 @@
+@value vars:  "../../style/vars.css";
+@value background-dark, text-color-light, z-index-menu from vars;
+
+.menu {
+  background: background-dark;
+  color: text-color-light;
+  display: inline-block;
+  position: absolute;
+  z-index: z-index-menu;
+}

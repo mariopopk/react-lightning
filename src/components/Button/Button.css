@@ -25,6 +25,10 @@
   background: transparent;
 }
 
+.btn.outline {
+  border-color: dark-color;
+}
+
 .btn:hover {
   opacity: 0.9;
 }

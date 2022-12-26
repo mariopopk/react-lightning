@@ -26,6 +26,14 @@
 Tokens 
 */
 
+/* z-index */
+@value z-index-base: 1000;
+@value z-index-above: 1;
+
+/* z-indez (continued) */
+@value z-index-backdrop: z-index-base;
+@value z-index-menu: calc( z-index-backdrop + z-index-above );
+
 /* Breakpoints */
 @value breakpoint-xs: 0px;
 @value breakpoint-sm: 576px;
