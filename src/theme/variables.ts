@@ -11,3 +11,4 @@ export type Color =
 
 export type Variant = "outline" | "filled";
 export type Size = "sm" | "md" | "lg";
+export type FontWeight = "normal" | "semibold" | "bold";

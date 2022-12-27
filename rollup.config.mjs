@@ -27,10 +27,12 @@ export default [
       typescript({ tsconfig: "./tsconfig.json" }),
 
       postcss({
-        // plugins: [postcssModulesValues],
         sourceMap: true,
         minimize: true,
+        extract: false,
+        writeDefinitions: true,
         modules: true,
+        namedExports: true,
       }),
     ],
   },

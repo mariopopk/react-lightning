@@ -1,0 +1,18 @@
+@value vars: "./vars.css";
+@value primary-color, secondary-color, light-color, dark-color from vars;
+
+:global(.text-primary) {
+  color: primary-color;
+}
+
+:global(.text-secondary) {
+  color: secondary-color;
+}
+
+:global(.text-light) {
+  color: light-color;
+}
+
+:global(.text-dark) {
+  color: dark-color;
+}

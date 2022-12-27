@@ -4,20 +4,20 @@
 @value form-border-width: 1px;
 
 .formExpandContainer {
-  min-width: 100%;
-  max-width: 100%;
   display: flex;
   position: relative;
   align-items: center;
+  transition: width 1s ease-in-out;
 }
 
 .formExpandContainer:focus-within {
   outline: auto auto 1px;
+  width: 100%;
 }
 
 .form {
   background: background-dark;
-  padding: sizing-3 sizing-6;
+  padding: sizing-3 sizing-1;
   border: form-border-width solid gray;
   flex-grow: 1;
   line-height: 1.5;
@@ -38,6 +38,6 @@
   height: 100%;
   background: background-dark;
   border: form-border-width solid gray;
-  padding: sizing-3;
+  padding: sizing-3 sizing-6;
   border-right-width: 0;
 }

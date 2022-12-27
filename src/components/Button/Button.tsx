@@ -1,48 +1,59 @@
 import React, {
   ForwardedRef,
   forwardRef,
-  ReactNode,
   useRef,
-  RefObject,
+  ButtonHTMLAttributes,
 } from "react";
 import { useButton, AriaButtonProps, PressHookProps } from "react-aria";
 import styles from "./Button.css";
+import "../../style/Colors.css";
+import "../../style/Utilities.css";
+
 import cx from "classnames";
-import { Color, Size, Variant } from "../../theme/variables";
+import { Color, FontWeight, Size, Variant } from "../../theme/variables";
 
 export interface BaseButtonProps {
   variant?: Variant;
   size?: Size;
-  bgColor?: Color;
+  color?: Color;
+  backgroundColor?: Color;
+  fontWeight?: FontWeight;
 }
+
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    PressHookProps,
-    BaseButtonProps {
-  children?: ReactNode;
-}
+  extends BaseButtonProps,
+    Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">,
+    PressHookProps {}
 
 function Button(
   {
     children,
     variant = "filled",
     size = "md",
-    bgColor = "transparent",
+    backgroundColor = "transparent",
+    fontWeight = "semibold",
+    color = "dark",
+    onPress,
     ...rest
   }: ButtonProps,
   ref: ForwardedRef<HTMLButtonElement>
 ) {
   const domRef = useRef(ref as HTMLButtonElement | null);
-  let { buttonProps } = useButton(rest as AriaButtonProps, domRef);
+  const { buttonProps } = useButton(
+    { ...rest, onPress } as AriaButtonProps,
+    domRef
+  );
 
-  const classes = cx(styles.btn, {
-    [styles[variant]]: variant,
-    [styles[bgColor]]: bgColor,
-    [styles[size]]: size,
-  });
+  const classes = cx(
+    styles.btn,
+    styles[variant],
+    styles[backgroundColor],
+    styles[size],
+    { [`text-${color}`]: color, [`font-weight-${fontWeight}`]: fontWeight }
+  );
 
   return (
-    <button {...buttonProps} ref={domRef} className={classes}>
+    <button {...rest} {...buttonProps} ref={domRef} className={classes}>
       {children}
     </button>
   );

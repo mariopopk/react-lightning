@@ -7,21 +7,25 @@ import { BaseButtonProps } from "../Button/Button";
 export interface BaseFormExpandProps {
   label: string;
   displayLabel: ReactNode;
-  buttonProps?: BaseButtonProps;
 }
 
-export interface FormExpandProps
+export interface FormProps
   extends React.DetailedHTMLProps<
       React.InputHTMLAttributes<HTMLInputElement>,
       HTMLInputElement
     >,
     BaseFormExpandProps {}
 
+export interface FormExpandProps extends BaseFormExpandProps {
+  buttonProps?: BaseButtonProps;
+  formProps?: FormProps;
+}
+
 export default function FormExpand({
   label,
   displayLabel,
   buttonProps,
-  ...rest
+  formProps,
 }: FormExpandProps) {
   const [isOpen, setIsOpen] = useState(false);
   const inputId = useId();
@@ -46,7 +50,6 @@ export default function FormExpand({
             {displayLabel}
           </label>
           <input
-            {...rest}
             className={styles.form}
             type="text"
             id={labelId}

@@ -8,3 +8,11 @@
   position: absolute;
   z-index: z-index-menu;
 }
+
+.right {
+  right: 0;
+}
+
+.left {
+  left: 0;
+}

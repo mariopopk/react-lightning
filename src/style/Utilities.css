@@ -1,0 +1,11 @@
+:global(.font-weight-normal) {
+  font-weight: 400;
+}
+
+:global(.font-weight-semibold) {
+  font-weight: 500;
+}
+
+:global(.font-weight-bold) {
+  font-weight: 700;
+}
