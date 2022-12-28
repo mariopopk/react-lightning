@@ -51,11 +51,14 @@ function Button(
     styles.btn,
     styles[variant],
     styles[backgroundColor],
-    styles[size],
-    { [`text-${color}`]: color, [`font-weight-${fontWeight}`]: fontWeight }
+    styles[size]
   );
 
-  const innerClasses = cx(styles.inner, { [styles.innerWithIcon]: icon });
+  const innerClasses = cx(styles.inner, {
+    [styles.innerWithIcon]: icon,
+    [`font-weight-${fontWeight}`]: fontWeight,
+    [`text-${color}`]: color,
+  });
 
   return (
     <button {...rest} {...buttonProps} ref={domRef} className={classes}>
