@@ -1,5 +1,5 @@
 @value vars:  "../../style/vars.css";
-@value background-dark, text-color-light, z-index-menu from vars;
+@value background-dark, text-color-light, z-index-menu, roundness-md from vars;
 
 .menu {
   background: background-dark;
@@ -7,6 +7,7 @@
   display: inline-block;
   position: absolute;
   z-index: z-index-menu;
+  border-radius: roundness-md;
 }
 
 .right {

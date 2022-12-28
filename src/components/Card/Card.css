@@ -1,0 +1,20 @@
+@value vars:  "../../style/vars.css";
+@value primary-color, secondary-color, light-color, dark-color, text-color-dark, text-color-light, sizing-1, sizing-2, sizing-3, sizing-6, roundness-md from vars;
+
+.card {
+  border-radius: roundness-md;
+  border: 1px solid #abb2bf23;
+  overflow: hidden;
+}
+
+.image-cover {
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}

@@ -1,5 +1,5 @@
 @value vars:  "../../style/vars.css";
-@value primary-color, secondary-color, light-color, dark-color, text-color-dark, text-color-light, sizing-1, sizing-2, sizing-3, sizing-6, roundness from vars;
+@value primary-color, secondary-color, light-color, dark-color, text-color-dark, text-color-light, sizing-1, sizing-2, sizing-3, sizing-6, roundness-sm, roundness-md, roundness-lg from vars;
 
 @value button-border-width: 1px;
 
@@ -39,19 +39,19 @@
 .btn.sm {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
-  border-radius: calc(roundness - (roundness * 0.2));
+  border-radius: roundness-sm;
 }
 
 .btn.md {
   padding: sizing-3 sizing-6;
   font-size: 1rem;
-  border-radius: roundness;
+  border-radius: roundness-md;
 }
 
 .btn.lg {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
-  border-radius: calc(roundness + (roundness * 0.2));
+  border-radius: roundness-lg;
 }
 
 .btn.transparent {

@@ -8,6 +8,7 @@
   position: relative;
   align-items: center;
   transition: width 1s ease-in-out;
+  align-items: stretch;
 }
 
 .formExpandContainer:focus-within {
@@ -21,7 +22,6 @@
   border: form-border-width solid gray;
   flex-grow: 1;
   line-height: 1.5;
-  font-size: 1rem;
   color: white;
   border-left-width: 0;
 }
@@ -38,6 +38,6 @@
   height: 100%;
   background: background-dark;
   border: form-border-width solid gray;
-  padding: sizing-3 sizing-6;
+  padding: sizing-3 sizing-1;
   border-right-width: 0;
 }

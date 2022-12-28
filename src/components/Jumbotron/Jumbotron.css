@@ -1,0 +1,26 @@
+.jumbotron-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.jumbotron-container.top {
+  align-items: flex-start;
+}
+.jumbotron-container.middle {
+  align-items: center;
+}
+.jumbotron-container.center {
+  justify-content: center;
+}
+.jumbotron-container.bottom {
+  align-items: flex-end;
+}
+.jumbotron-container.left {
+  justify-content: start;
+}
+.jumbotron-container.right {
+  justify-content: end;
+}
+.jumbotron-content {
+  padding: 1rem;
+}

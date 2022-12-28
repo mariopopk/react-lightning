@@ -5,4 +5,7 @@ export { default as MenuItem } from "./MenuItem";
 export { default as Backdrop } from "./Backdrop";
 export { default as Logo } from "./Logo";
 export { default as Typography } from "./Typography";
+export { default as Card } from "./Card";
+export { default as AspectRatioBox } from "./AspectRatioBox";
+export { default as Jumbotron } from "./Jumbotron";
 export { default as Playground } from "./Playground";
