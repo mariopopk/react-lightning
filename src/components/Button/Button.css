@@ -25,6 +25,7 @@
   word-break: break-word;
   background: transparent;
   vertical-align: middle;
+  opacity: 0.85;
 }
 
 .btn.outline {
@@ -32,7 +33,7 @@
 }
 
 .btn:hover {
-  opacity: 0.85;
+  opacity: 1;
 }
 
 .btn.sm {
