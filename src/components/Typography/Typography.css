@@ -1,0 +1,7 @@
+@value vars:  "../../style/vars.css";
+@value typography-family from vars;
+
+.text {
+  font-family: typography-family;
+  line-height: 1.5;
+}

@@ -4,4 +4,5 @@ export { default as Menu } from "./Menu";
 export { default as MenuItem } from "./MenuItem";
 export { default as Backdrop } from "./Backdrop";
 export { default as Logo } from "./Logo";
+export { default as Typography } from "./Typography";
 export { default as Playground } from "./Playground";

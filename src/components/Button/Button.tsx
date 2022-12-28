@@ -3,6 +3,7 @@ import React, {
   forwardRef,
   useRef,
   ButtonHTMLAttributes,
+  ReactNode,
 } from "react";
 import { useButton, AriaButtonProps, PressHookProps } from "react-aria";
 import styles from "./Button.css";
@@ -10,14 +11,15 @@ import "../../style/Colors.css";
 import "../../style/Utilities.css";
 
 import cx from "classnames";
-import { Color, FontWeight, Size, Variant } from "../../theme/variables";
+import { Color, FontWeight, Size, ButtonVariant } from "../../theme/variables";
 
 export interface BaseButtonProps {
-  variant?: Variant;
+  variant?: ButtonVariant;
   size?: Size;
   color?: Color;
   backgroundColor?: Color;
   fontWeight?: FontWeight;
+  icon?: ReactNode;
 }
 
 export interface ButtonProps
@@ -33,6 +35,7 @@ function Button(
     backgroundColor = "transparent",
     fontWeight = "semibold",
     color = "dark",
+    icon,
     onPress,
     ...rest
   }: ButtonProps,
@@ -52,9 +55,12 @@ function Button(
     { [`text-${color}`]: color, [`font-weight-${fontWeight}`]: fontWeight }
   );
 
+  const innerClasses = cx(styles.inner, { [styles.innerWithIcon]: icon });
+
   return (
     <button {...rest} {...buttonProps} ref={domRef} className={classes}>
-      {children}
+      {icon ? icon : null}
+      <div className={innerClasses}>{children}</div>
     </button>
   );
 }

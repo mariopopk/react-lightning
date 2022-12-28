@@ -1,0 +1,33 @@
+@value vars: "./vars.css";
+@value typography-caption-size, typography-subtitle-size, typography-base-size, typography-h1-size, typography-h2-size, typography-h3-size, typography-h4-size, typography-h5-size, typography-h6-size from vars;
+
+:global(.text-inherit) {
+  font-size: inherit;
+}
+:global(.text-subtitle) {
+  font-size: typography-subtitle-size;
+}
+:global(.text-base) {
+  font-size: typography-base-size;
+}
+:global(.text-caption) {
+  font-size: typography-caption-size;
+}
+:global(.text-h1) {
+  font-size: typography-h1-size;
+}
+:global(.text-h2) {
+  font-size: typography-h1-size;
+}
+:global(.text-h3) {
+  font-size: typography-h1-size;
+}
+:global(.text-h4) {
+  font-size: typography-h1-size;
+}
+:global(.text-h5) {
+  font-size: typography-h1-size;
+}
+:global(.text-h6) {
+  font-size: typography-h1-size;
+}

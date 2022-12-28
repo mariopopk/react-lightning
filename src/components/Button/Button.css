@@ -8,7 +8,6 @@
   font-weight: 500;
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
   user-select: none;
   border: button-border-width solid transparent;
   padding: sizing-3 sizing-6;
@@ -20,10 +19,12 @@
   appearance: none;
   display: flex;
   justify-content: center;
+  align-items: center;
   opacity: 1;
   position: relative;
   word-break: break-word;
   background: transparent;
+  vertical-align: middle;
 }
 
 .btn.outline {
@@ -98,4 +99,16 @@
 .btn.dark.outline {
   border-color: dark-color;
   color: dark-color;
+}
+
+.inner {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerWithIcon {
+  margin-left: sizing-2;
 }
