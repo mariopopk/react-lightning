@@ -15,7 +15,7 @@ export default function Logo({ type }: LogoProps) {
         <img
           alt=""
           className={classNames}
-          src="https://images.ctfassets.net/5hn1f663deh9/6pwsInFLqcBKTRBH6a2Kxi/a09678964fcbfe310c2a77e17d0422d1/netflix-1-logo-svgrepo-com.svg"
+          src="https://images.ctfassets.net/5hn1f663deh9/6pwsInFLqcBKTRBH6a2Kxi/06759f4d09317e2e5d84c0007fb52aaf/netflix-1-logo-svgrepo-com.svg.png"
         />
       ) : (
         <img

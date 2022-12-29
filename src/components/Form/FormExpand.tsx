@@ -37,7 +37,10 @@ export default function FormExpand({
   });
 
   return (
-    <div className={styles.formExpandContainer}>
+    <div
+      className={styles.formExpandContainer}
+      style={{ borderColor: isOpen ? "gray" : "transparent" }}
+    >
       {!isOpen && (
         <Button {...focusProps} {...buttonProps} aria-label={label}>
           {displayLabel}

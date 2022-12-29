@@ -36,7 +36,9 @@ export default function Menu({
       {isOpen && (
         <>
           <Backdrop {...pressProps} />
-          <div className={classes}>{children}</div>
+          <div style={{ position: "relative" }}>
+            <div className={classes}>{children}</div>
+          </div>
         </>
       )}
     </>
