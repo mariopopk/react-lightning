@@ -8,5 +8,6 @@ export { default as Typography } from "./Typography";
 export { default as Card } from "./Card";
 export { default as AspectRatioBox } from "./AspectRatioBox";
 export { default as Jumbotron } from "./Jumbotron";
-export { default as Playground } from "./Playground";
+export { default as Carousel } from "./Carousel";
 export { default as Navbar } from "./Navbar";
+export { default as Playground } from "./Playground";
