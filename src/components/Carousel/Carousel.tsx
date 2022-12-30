@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Carousel.css";
+import cx from "classnames";
 
 export interface CarouselProps {
   slides: CarouselItem[];
@@ -11,9 +12,14 @@ export interface CarouselProps {
 export interface CarouselItem {
   id: string;
   link: string;
-  title: string;
-  price: number;
   img: string;
+}
+
+export interface CarouselItemProps extends CarouselItem {
+  i: number;
+  activeIndex: number;
+  viewableSlides: number;
+  height: number;
 }
 
 export default function Carousel({
@@ -63,12 +69,12 @@ export default function Carousel({
     return <div className="alert alert-secondary">Nothing to show</div>;
   else
     return (
-      <div className="carousel">
-        <div className="row flex-nowrap">
+      <div className={styles.carousel}>
+        <div style={{ display: "flex", flexWrap: "nowrap" }}>
           {slides.map(
             ({ id, link, title, price, img }: CarouselItem, i: number) => {
               return (
-                <TestingSlide
+                <CarouselItem
                   key={id}
                   viewableSlides={viewableSlides}
                   activeIndex={activeIndex}
@@ -84,49 +90,33 @@ export default function Carousel({
           )}
         </div>
         <button
-          className={
-            "carousel-control-prev " + (canSlideLeft ? "" : "disabled")
-          }
-          type="button"
-          data-bs-target={"#" + carouselName}
-          data-bs-slide="prev"
           onClick={() => {
             handleClick(false);
           }}
           tabIndex={-1}
         >
-          <i className="bi bi-arrow-left-short text-primary display-5"></i>
-          <span className="visually-hidden">Previous</span>
+          Previous
         </button>
         <button
-          className={
-            "carousel-control-next " + (canSlideRight ? "" : "disabled")
-          }
-          type="button"
-          data-bs-target={"#" + carouselName}
-          data-bs-slide="next"
           onClick={() => {
             handleClick(true);
           }}
           tabIndex={-1}
         >
-          <i className="bi bi-arrow-right-short text-primary display-5"></i>
-          <span className="visually-hidden">Next</span>
+          Next
         </button>
       </div>
     );
 }
 
-function TestingSlide({
+function CarouselItem({
   link,
-  title,
-  price,
   img,
   i,
   activeIndex,
   viewableSlides,
   height,
-}: any) {
+}: CarouselItemProps) {
   const lastSlideInRange = activeIndex + viewableSlides - 1;
   const isSlideViewable = i >= activeIndex && i <= lastSlideInRange;
 
@@ -137,25 +127,21 @@ function TestingSlide({
   return (
     <div
       style={{ width: calcSlideWidth(isSlideViewable, viewableSlides) }}
-      className={"multicarousel-slide " + (isSlideViewable ? "show" : "")}
+      className={cx(styles["multicarousel-slide"], {
+        [styles.show]: isSlideViewable,
+      })}
     >
       <a className=" text-decoration-none" href={link}>
-        <div className="multicarousel-slide-container">
+        <div className={styles["multicarousel-slide-container"]}>
           <img
-            // src={resolveHost(img.url)}
-            alt={img.alt}
+            alt=""
+            src={img}
             style={{
               height: height,
               objectFit: "cover",
               width: "100%",
             }}
           />
-          <div className="">
-            <p className="small-title my-2 overflow-hidden text-nowrap text-truncate">
-              {title}
-            </p>
-            <span className="text-muted">{price}</span>
-          </div>
         </div>
       </a>
     </div>

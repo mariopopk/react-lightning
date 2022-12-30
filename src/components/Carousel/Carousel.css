@@ -1,10 +1,29 @@
 @value vars:  "../../style/vars.css";
 @value primary-color, secondary-color, light-color, dark-color, text-color-dark, text-color-light, sizing-1, sizing-2, sizing-3, sizing-6, roundness-md from vars;
 
+.multicarousel-slide {
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+  margin: 0.75rem;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transition: width 0.3s, opacity 0.5s linear;
+}
+
+.multicarousel-slide.show {
+  visibility: initial;
+  opacity: 1;
+}
+
+.multicarousel-slide-container {
+  padding: 0.75rem;
+}
+
 .carousel:focus-visible,
 .carousel:focus-visible {
   outline: -webkit-focus-ring-color solid 2px;
-  // box-shadow: 0 0 0 0.25rem rgb(58 58 58 / 25%);
 }
 
 .carousel-control-prev,
@@ -21,10 +40,12 @@
   opacity: 1;
   color: black;
   transition: opacity 0.2s linear;
-  &.disabled {
-    opacity: 0.4;
-    cursor: default;
-  }
+}
+
+.carousel:hover .carousel-control-prev.disabled,
+.carousel:hover .carousel-control-next.disabled {
+  opacity: 0.4;
+  cursor: default;
 }
 
 .carousel-control-prev:focus,
@@ -37,8 +58,9 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.2s, opacity 0.2s linear;
-  &.show {
-    visibility: visible;
-    opacity: 1;
-  }
+}
+
+.animated-fade.show {
+  visibility: visible;
+  opacity: 1;
 }
