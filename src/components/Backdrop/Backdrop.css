@@ -10,6 +10,7 @@
 
 .dark {
   background-color: background-dark;
+  backdrop-filter: blur(16px);
 }
 
 .modal {

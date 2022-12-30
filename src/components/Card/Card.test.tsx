@@ -1,10 +1,12 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import Button from "./Card";
+import Card from "./Card";
 
-describe("Button", () => {
-  // it("renders the Button component", () => {
-  //   render(<Button children="Hello world!" />);
-  // });
+describe("Card", () => {
+  it("renders successfully", () => {
+    const { getByText } = render(<Card children="Hello World!" />);
+
+    expect(getByText("Hello World!")).toBeInTheDocument();
+  });
 });

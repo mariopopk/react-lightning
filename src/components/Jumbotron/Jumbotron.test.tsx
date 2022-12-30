@@ -1,10 +1,17 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import Button from "./Jumbotron";
+import Jumbotron from "./Jumbotron";
 
-describe("Button", () => {
-  // it("renders the Button component", () => {
-  //   render(<Button children="Hello world!" />);
-  // });
+describe("Jumbotron", () => {
+  it("renders successfully", () => {
+    const { getByText } = render(
+      <Jumbotron
+        horizontalAlignment="right"
+        verticalAlignment="middle"
+        children="Hello World!"
+      />
+    );
+    expect(getByText("Hello World!")).toBeInTheDocument();
+  });
 });

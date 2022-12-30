@@ -1,12 +1,12 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render } from "@testing-library/react";
+import AspectRatioBox from "./AspectRatioBox";
 
-describe("<FormExpand/>", () => {
+describe("<AspectRatioBox/>", () => {
   it("renders succesfully", () => {
-    // const { getByText } = render(
-    //   <FormExpand label="Search" displayLabel="Search" />
-    // );
-    // expect(getByText("Search")).toBeInTheDocument();
+    const { getByText } = render(
+      <AspectRatioBox aspectRatio={{ w: 1, h: 2 }}>Children</AspectRatioBox>
+    );
+    expect(getByText("Children")).toBeInTheDocument();
   });
 });

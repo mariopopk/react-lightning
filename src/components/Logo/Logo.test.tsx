@@ -1,6 +1,11 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
-import FormExpand from "./Logo";
-import userEvent from "@testing-library/user-event";
+import { render } from "@testing-library/react";
 
-describe("<Logo/>", () => {});
+import Logo from "./Logo";
+
+describe("Jumbotron", () => {
+  it("renders successfully", () => {
+    const { getByAltText } = render(<Logo type="full" />);
+    expect(getByAltText("")).toBeInTheDocument();
+  });
+});

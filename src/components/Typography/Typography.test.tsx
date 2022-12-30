@@ -1,6 +1,11 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
-import FormExpand from "./Typography";
-import userEvent from "@testing-library/user-event";
+import { render } from "@testing-library/react";
 
-describe("<Logo/>", () => {});
+import Typography from "./Typography";
+
+describe("Typography", () => {
+  it("renders successfully", () => {
+    const { getByText } = render(<Typography children="Hello World!" />);
+    expect(getByText("Hello World!")).toBeInTheDocument();
+  });
+});

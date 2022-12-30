@@ -19,11 +19,9 @@ export default function Navbar({ children }: NavbarProps) {
     const updateScroll = (e: Event) => {
       if (scrollY !== top) {
         if (isAtTop) {
-          console.log("Update - false", isAtTop);
           setIsAtTop(false);
         }
       } else {
-        console.log("Update - true", isAtTop);
         setIsAtTop(true);
       }
     };
