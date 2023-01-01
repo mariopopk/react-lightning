@@ -1,29 +1,33 @@
-/* @value vars:  "../../style/vars.css";
-@value primary-color, secondary-color, light-color, dark-color, text-color-dark, text-color-light, sizing-1, sizing-2, sizing-3, sizing-6, roundness-md from vars; */
+@value vars:  "../../style/vars.css";
+@value background-dark, roundness-sm, sizing-2 from vars;
 
-.multicarousel-slide {
-  visibility: hidden;
+.carousel-button {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  width: 5%;
+  background: background-dark;
+}
+
+.carousel-button.left {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.carousel-button.right {
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0.6) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.carousel-item {
+  display: inline-block;
+  border-radius: roundness-sm;
   overflow: hidden;
-  width: 0;
-  padding: 0;
-  margin: 0;
-  opacity: 0;
-  transition: width 0.3s, opacity 0.5s linear;
-}
-
-.multicarousel-slide.show {
-  visibility: initial;
-  opacity: 1;
-}
-
-.animated-fade {
-  display: block;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0.2s, opacity 0.2s linear;
-}
-
-.animated-fade.show {
-  visibility: visible;
-  opacity: 1;
 }

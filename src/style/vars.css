@@ -20,7 +20,7 @@
 @value sizing-10: 1.25rem; /* 20px */
 
 /* Roundness */
-@value roundness-sm: 0.35rem;
+@value roundness-sm: 0.25rem;
 @value roundness-md: 0.45rem;
 @value roundness-lg: 0.55rem;
 

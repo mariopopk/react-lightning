@@ -16,7 +16,7 @@ export default function AspectRatioBox({
     <div
       style={{
         paddingTop: `calc(${aspectRatio.h} / ${aspectRatio.w} * 100%)`,
-        height: 0,
+        // height: 0,
         overflow: "hidden",
         position: "relative",
       }}
