@@ -8,6 +8,7 @@
   bottom: 0;
   width: 5%;
   background: background-dark;
+  display: flex;
 }
 
 .carousel-button.left {
@@ -28,6 +29,9 @@
 
 .carousel-item {
   display: inline-block;
-  border-radius: roundness-sm;
   overflow: hidden;
+}
+
+.carousel-item img {
+  border-radius: roundness-sm;
 }
