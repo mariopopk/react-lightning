@@ -1,16 +1,8 @@
-import React, {
-  createRef,
-  CSSProperties,
-  useEffect,
-  useRef,
-  useState,
-  RefObject,
-} from "react";
+import React, { useEffect, useRef, useState, RefObject } from "react";
 import styles from "./Carousel.css";
 import cx from "classnames";
 import AspectRatioBox from "../AspectRatioBox";
 import Button from "../Button";
-import { useMove } from "react-aria";
 
 export interface CarouselProps {
   items: CarouselItemProps[];
@@ -65,51 +57,19 @@ function useSlideCarousel({
     return x;
   }
 
-  const moveOne = (direction: "left" | "right") =>
+  function move(direction: "left" | "right", multiplier: number = 1) {
     setPositionX((positionX) => {
       const moveDirection = direction === "left" ? 1 : -1;
       let currentItem = Math.round(positionX / itemWidth);
 
-      currentItem += moveDirection;
+      currentItem += moveDirection * multiplier;
       return enforceBounds(currentItem * itemWidth);
     });
-
-  function moveMany(direction: "left" | "right") {
-    const moveDirection = direction === "left" ? 1 : -1;
-    let currentItem = Math.round(positionX / itemWidth);
-    currentItem += moveDirection * inScreenItems;
-    return enforceBounds(currentItem * itemWidth);
   }
 
-  const { moveProps } = useMove({
-    onMove(e) {
-      setPositionX((x) => {
-        // Normally, we want to allow the user to continue
-        // dragging outside the box such that they need to
-        // drag back over the ball again before it moves.
-        // This is handled below by clamping during render.
-        // If using the keyboard, however, we need to clamp
-        // here so that dragging outside the container and
-        // then using the arrow keys works as expected.
-        if (e.pointerType === "keyboard") {
-          // x = clamp(x);
-        }
-
-        // Update x value
-        x += e.deltaX;
-
-        return enforceBounds(x);
-      });
-    },
-  });
-
   return {
-    moveProps: {
-      ...moveProps,
-    },
     positionX,
-    moveOne,
-    moveMany,
+    move,
   };
 }
 
@@ -117,7 +77,7 @@ export default function Carousel({ items, inScreenItems = 4 }: CarouselProps) {
   // State
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  const { moveProps, positionX, moveOne, moveMany } = useSlideCarousel({
+  const { positionX, move } = useSlideCarousel({
     carouselRef,
     inScreenItems,
     totalItems: items.length,
@@ -125,13 +85,12 @@ export default function Carousel({ items, inScreenItems = 4 }: CarouselProps) {
 
   return (
     <div style={{ padding: "0 5%", position: "relative", overflow: "hidden" }}>
-      <div
-        className={cx(styles["carousel-button"], styles.left)}
-        style={{ left: 0 }}
-      >
+      <div className={cx(styles["carousel-button-container"], styles.left)}>
         <Button
           style={{ width: "100%" }}
-          onPress={() => moveOne("left")}
+          onPress={() => {
+            move("left", inScreenItems);
+          }}
           backgroundColor="transparent"
           color="light"
         >
@@ -140,21 +99,14 @@ export default function Carousel({ items, inScreenItems = 4 }: CarouselProps) {
       </div>
 
       <div
+        className={styles["carousel-inner"]}
         ref={carouselRef}
-        {...moveProps}
         style={{
           whiteSpace: "nowrap",
           transform: `translate(${positionX}px, 0px)`,
-          transition: "ease-out",
+          transition: "ease-out 0.75s",
+          overflowX: "unset",
         }}
-        onWheel={(e) => {
-          const direction = e.deltaX === 1 ? "right" : "left";
-          console.log(direction, "throttle?");
-          throttle(() => {
-            console.log("once");
-          }, 1000);
-        }}
-        tabIndex={0}
       >
         {items.map(({ id, link, img }: CarouselItemProps, i: number) => {
           return (
@@ -182,13 +134,12 @@ export default function Carousel({ items, inScreenItems = 4 }: CarouselProps) {
         })}
       </div>
 
-      <div
-        className={cx(styles["carousel-button"], styles.right)}
-        style={{ right: 0 }}
-      >
+      <div className={cx(styles["carousel-button-container"], styles.right)}>
         <Button
           style={{ width: "100%" }}
-          onPress={() => moveOne("right")}
+          onPress={() => {
+            move("right", inScreenItems);
+          }}
           backgroundColor="transparent"
           color="light"
         >
