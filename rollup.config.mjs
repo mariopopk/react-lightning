@@ -13,18 +13,17 @@ export default [
       {
         file: "dist/cjs/index.js", //should be same as packageJson.main
         format: "cjs",
-        sourcemap: true,
+        sourcemap: "inline",
       },
       {
         file: "dist/esm/index.js", //should be same as packageJson.module
         format: "esm",
-        sourcemap: true,
+        sourcemap: "inline",
       },
     ],
     plugins: [
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
 
       postcss({
         sourceMap: true,
@@ -34,6 +33,8 @@ export default [
         modules: true,
         namedExports: true,
       }),
+
+      typescript({ tsconfig: "./tsconfig.json" }),
     ],
   },
   {
