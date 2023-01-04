@@ -1,8 +1,5 @@
 {
   "name": "@mariopopk/react-lightning",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/mariopopk/react-lightning"
-  },
   "version": "0.1.0",
   "description": "Unofficial React Component Library for Netflix",
   "main": "dist/cjs/index.js",
