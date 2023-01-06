@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { CSSProperties, ReactNode } from "react";
 import { Color, FontWeight, TextVariant } from "../../theme/variables";
 import styles from "./Typography.css";
 import "../../style/Typography.css";
@@ -13,6 +13,7 @@ export interface TypographyProps {
   component?: TextVariant | "span";
   color?: Color;
   fontWeight?: FontWeight;
+  style?: CSSProperties;
 }
 
 export default function Typography({
@@ -21,6 +22,7 @@ export default function Typography({
   variant = "base",
   color = "dark",
   fontWeight = "normal",
+  style,
 }: TypographyProps) {
   const classes = cx(styles.text, {
     [`text-${variant}`]: variant,
@@ -30,23 +32,55 @@ export default function Typography({
 
   switch (component) {
     case "h1":
-      return <h1 className={classes}>{children}</h1>;
+      return (
+        <h1 className={classes} style={style}>
+          {children}
+        </h1>
+      );
     case "h2":
-      return <h2 className={classes}>{children}</h2>;
+      return (
+        <h2 className={classes} style={style}>
+          {children}
+        </h2>
+      );
     case "h3":
-      return <h3 className={classes}>{children}</h3>;
+      return (
+        <h3 className={classes} style={style}>
+          {children}
+        </h3>
+      );
     case "h4":
-      return <h4 className={classes}>{children}</h4>;
+      return (
+        <h4 className={classes} style={style}>
+          {children}
+        </h4>
+      );
     case "h5":
-      return <h5 className={classes}>{children}</h5>;
+      return (
+        <h5 className={classes} style={style}>
+          {children}
+        </h5>
+      );
     case "h6":
-      return <h6 className={classes}>{children}</h6>;
+      return (
+        <h6 className={classes} style={style}>
+          {children}
+        </h6>
+      );
     case "span":
-      return <span className={classes}>{children}</span>;
+      return (
+        <span className={classes} style={style}>
+          {children}
+        </span>
+      );
     case "base":
     case "inherit":
     case "caption":
     default:
-      return <p className={classes}>{children}</p>;
+      return (
+        <p className={classes} style={style}>
+          {children}
+        </p>
+      );
   }
 }

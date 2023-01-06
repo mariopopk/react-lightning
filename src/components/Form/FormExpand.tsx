@@ -11,10 +11,9 @@ export interface BaseFormExpandProps {
 
 export interface FormProps
   extends React.DetailedHTMLProps<
-      React.InputHTMLAttributes<HTMLInputElement>,
-      HTMLInputElement
-    >,
-    BaseFormExpandProps {}
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {}
 
 export interface FormExpandProps extends BaseFormExpandProps {
   buttonProps?: BaseButtonProps;
@@ -32,7 +31,9 @@ export default function FormExpand({
   const labelId = `${label}-${inputId}`;
 
   const { focusProps } = useFocus({
-    onBlur: () => setIsOpen(false),
+    onBlur: () => {
+      if (!formProps?.value) setIsOpen(false);
+    },
     onFocus: () => setIsOpen(true),
   });
 
@@ -59,6 +60,7 @@ export default function FormExpand({
             name={label}
             autoFocus
             autoComplete="off"
+            {...formProps}
             {...focusProps}
           />
         </>

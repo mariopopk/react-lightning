@@ -1,14 +1,14 @@
 @value vars:  "../../style/vars.css";
-@value background-dark, sizing-1, sizing-3, sizing-6 from vars;
+@value background-dark-2, sizing-1, sizing-3, sizing-6 from vars;
 
 .formExpandContainer {
   display: flex;
   position: relative;
   align-items: center;
   transition: width 1s ease-in-out;
-  align-items: stretch;
   border-radius: sizing-3;
   border: 1px solid;
+  overflow: hidden;
 }
 
 .formExpandContainer:focus-within {
@@ -17,7 +17,7 @@
 }
 
 .form {
-  background: background-dark;
+  background: background-dark-2;
   padding: sizing-3 sizing-1;
   border-width: 0;
   flex-grow: 1;
@@ -25,6 +25,7 @@
   color: white;
   width: 100%;
   font-size: 1rem;
+  border-radius: 0;
 }
 
 .form:focus,
@@ -35,9 +36,8 @@
 .label {
   color: white;
   display: flex;
-  align-items: center;
   height: 100%;
-  background: background-dark;
+  background: background-dark-2;
   border-width: 0;
   padding: sizing-3;
   border-right-width: 0;

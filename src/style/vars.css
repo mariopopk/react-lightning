@@ -6,6 +6,7 @@
 /* Black */
 @value black: #000000;
 @value black-75: #000000BF;
+@value black-90: #000000E6;
 
 /* Sizing */
 @value sizing-1: 0.125rem; /* 2px */
@@ -57,7 +58,8 @@ Tokens
 @value typography-h6-size: 1rem;
 
 /* Background */
-@value background-dark: black-75;
+@value background-dark-1: black-90;
+@value background-dark-2: black-75;
 
 /* Text */
 @value text-color-dark: black;

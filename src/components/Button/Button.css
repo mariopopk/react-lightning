@@ -26,6 +26,7 @@
   background: transparent;
   vertical-align: middle;
   opacity: 0.85;
+  flex-shrink: 0;
 }
 
 .btn.outline {
@@ -49,8 +50,8 @@
 }
 
 .btn.lg {
-  padding: 0.5rem 1rem;
-  font-size: 1.25rem;
+  padding: 0.425rem 0.9rem;
+  font-size: 1.15rem;
   border-radius: roundness-lg;
 }
 

@@ -22,7 +22,7 @@ export default function Card({
 
   const backgroundImage =
     imageBackground &&
-    `linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url("${imageBackground}")`;
+    `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url("${imageBackground}")`;
 
   return (
     <>
