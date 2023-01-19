@@ -1,32 +1,35 @@
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import typescript from "@rollup/plugin-typescript";
-import dts from "rollup-plugin-dts";
-import postcss from "rollup-plugin-postcss";
-// import postcssModulesValues from "postcss-modules-values";
+const resolve = require("@rollup/plugin-node-resolve");
+const commonjs = require("@rollup/plugin-commonjs");
+const typescript = require("@rollup/plugin-typescript");
+const postcss = require("rollup-plugin-postcss");
+const terser = require("@rollup/plugin-terser");
+const peerDepsExternal = require("rollup-plugin-peer-deps-external");
+const { default: dts } = require("rollup-plugin-dts");
 
-export default [
+// export default
+module.exports = [
   {
     input: "src/index.ts",
-    external: ["react"],
+    external: ["react", "react-dom"],
     output: [
       {
         file: "dist/cjs/index.js", //should be same as packageJson.main
         format: "cjs",
-        sourcemap: "inline",
+        sourcemap: true,
       },
       {
         file: "dist/esm/index.js", //should be same as packageJson.module
         format: "esm",
-        sourcemap: "inline",
+        sourcemap: true,
       },
     ],
     plugins: [
+      peerDepsExternal(),
+
       resolve(),
       commonjs(),
 
       postcss({
-        sourceMap: true,
         minimize: true,
         extract: false,
         writeDefinitions: true,
@@ -35,6 +38,7 @@ export default [
       }),
 
       typescript({ tsconfig: "./tsconfig.json" }),
+      terser({}),
     ],
   },
   {
