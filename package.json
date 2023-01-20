@@ -44,6 +44,5 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-aria": "^3.22.0"
-
   }
 }
