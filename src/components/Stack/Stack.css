@@ -1,0 +1,43 @@
+@value vars:  "../../style/vars.css";
+@value sizing-1, sizing-2, sizing-3, sizing-4, sizing-5 from vars;
+
+.Stack {
+  display: flex;
+  align-items: center;
+}
+.spacing-1 > * {
+  margin-left: sizing-1;
+  margin-right: sizing-1;
+}
+.spacing-2 > * {
+  margin-left: sizing-2;
+  margin-right: sizing-2;
+}
+.spacing-3 > * {
+  margin-left: sizing-3;
+  margin-right: sizing-3;
+}
+.spacing-4 > * {
+  margin-left: sizing-4;
+  margin-right: sizing-4;
+}
+.spacing-5 > * {
+  margin-left: sizing-5;
+  margin-right: sizing-5;
+}
+
+.spacing-1 > *:last-child,
+.spacing-2 > *:last-child,
+.spacing-3 > *:last-child,
+.spacing-4 > *:last-child,
+.spacing-5 > *:last-child {
+  margin-right: 0;
+}
+
+.spacing-1 > *:first-child,
+.spacing-2 > *:first-child,
+.spacing-3 > *:first-child,
+.spacing-4 > *:first-child,
+.spacing-5 > *:first-child {
+  margin-left: 0;
+}

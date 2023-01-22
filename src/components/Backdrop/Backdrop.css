@@ -1,5 +1,5 @@
 @value vars:  "../../style/vars.css";
-@value background-dark, z-index-backdrop from vars;
+@value background-dark-2, z-index-backdrop from vars;
 
 .backdrop {
   position: fixed;
@@ -9,12 +9,17 @@
 }
 
 .dark {
-  background-color: background-dark;
+  background-color: background-dark-2;
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .modal {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  overflow-y: auto;
+}
+
+.menu {
 }

@@ -1,0 +1,14 @@
+@value vars:  "../../style/vars.css";
+@value background-color, text-color-light, roundness-lg, elevation-md from vars;
+
+.Paper {
+  background-color: background-color;
+  color: text-color-light;
+  border-radius: roundness-lg;
+  box-shadow: elevation-md;
+  overflow: hidden;
+}
+
+.spacing-1 {
+  margin-left: ;
+}

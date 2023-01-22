@@ -29,11 +29,15 @@
 Tokens 
 */
 
-/* z-index */
+@value elevation-sm:  rgba(149, 157, 165, 0.2) 0px 8px 24px;
+@value elevation-md:  rgba(0, 0, 0, 0.24) 0px 3px 8px;
+@value elevation-lg:  rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+/* z-index (Base */
 @value z-index-base: 1000;
 @value z-index-above: 1;
 
-/* z-indez (continued) */
+/* z-indez (Extend) */
 @value z-index-backdrop: z-index-base;
 @value z-index-menu: calc( z-index-backdrop + z-index-above );
 
@@ -60,6 +64,7 @@ Tokens
 /* Background */
 @value background-dark-1: black-90;
 @value background-dark-2: black-75;
+@value background-color: black;
 
 /* Text */
 @value text-color-dark: black;
