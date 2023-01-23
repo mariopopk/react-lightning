@@ -1,6 +1,6 @@
 {
   "name": "@mariopopk/react-lightning",
-  "version": "0.1.2",
+  "version": "0.1.31",
   "description": "Unofficial React Component Library ",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",

@@ -16,7 +16,7 @@
 
 .modal {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   overflow-y: auto;
 }

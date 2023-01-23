@@ -15,6 +15,9 @@ export default function Modal({ isOpen, children, onClose }: ModalProps) {
   useEffect(() => {
     if (isOpen) document.body.style.overflow = 'hidden'
     else document.body.style.overflow = 'unset'
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
   }, [isOpen])
 
   const { pressProps } = usePress({
@@ -28,13 +31,16 @@ export default function Modal({ isOpen, children, onClose }: ModalProps) {
       {isOpen && (
         <>
           <Backdrop
+            className={styles.fadeIn}
             variant="modal"
             invisible={false}
             data-testid="backdrop"
             {...pressProps}
-          >
+          />
+
+          <div className={styles.Modal}>
             <Paper>{children}</Paper>
-          </Backdrop>
+          </div>
         </>
       )}
     </>
